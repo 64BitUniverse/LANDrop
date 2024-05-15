@@ -44,3 +44,5 @@ To build LANDrop:
     ```
     landrop
     ```
+
+You need to build before developing. Some files, like ui_aboutdialog.h, will not exist and may be an issue depending on what tools you use.

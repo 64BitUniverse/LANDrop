@@ -50,8 +50,12 @@ int main(int argc, char *argv[])
     a.setQuitOnLastWindowClosed(false);
 
     QTranslator appTranslator;
-    appTranslator.load(a.applicationName() + '.' + QLocale::system().name(), ":/locales", "", ".qm");
-    a.installTranslator(&appTranslator);
+    if (appTranslator.load(a.applicationName() + '.' + QLocale::system().name(), ":/locales", "", ".qm")){
+        a.installTranslator(&appTranslator);
+        } else{
+        printf("main.cpp, appTranslator returns false");
+    }
+
 
     try {
         if (!QSystemTrayIcon::isSystemTrayAvailable())
